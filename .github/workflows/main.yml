@@ -18,8 +18,7 @@ jobs:
         uses: depot/build-push-action@v1
 
         with:
-          project: zsn5vnsgv5
-          
+          project: ${{ secrets.DEPOT_PROJECT_ID }}
           
 
 
