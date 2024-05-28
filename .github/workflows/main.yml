@@ -18,8 +18,6 @@ jobs:
       uses: depot/build-push-action@v1
 
       with:
-        project: <your-depot-project-id>
-        # Pass project token or user access token if you're not 
-        # using OIDC + token authentication
-        token: ${{ secrets.DEPOT_TOKEN }}
+        project: zsn5vnsgv5
+
 
