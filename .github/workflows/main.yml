@@ -1,11 +1,11 @@
-name: Build Docker image
+name: Build multi-platform Docker image
  
 on:
   push: {}
  
 jobs:
   build-with-docker:
-    name: Build with Docker
+    name: Build multi-platform Docker image
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
@@ -15,4 +15,5 @@ jobs:
         with:
           context: .
           platforms: linux/amd64,linux/arm64
-          
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
