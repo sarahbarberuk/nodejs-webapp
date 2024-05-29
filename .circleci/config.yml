@@ -19,4 +19,3 @@ workflows:
   run_build:
     jobs:
       - build
-
