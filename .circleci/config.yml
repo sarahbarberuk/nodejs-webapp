@@ -2,24 +2,20 @@ version: 2.1
  
 jobs:
   build:
-    docker:
-      - image: cimg/node:lts
-    resource_class: small
+    machine: true
+    resource_class: medium
     steps:
       - checkout
-      - setup_remote_docker
       - run:
           name: Install Depot
           command: |
             curl -L https://depot.dev/install-cli.sh | sudo env DEPOT_INSTALL_DIR=/usr/local/bin sh
       - run:
           name: Build with Depot
-          command: depot build -t my-image:latest --platform linux/amd64,linux/arm64 .
- 
+          command: |
+            depot build -t my-image:latest .
  
 workflows:
   run_build:
     jobs:
       - build
-
-
